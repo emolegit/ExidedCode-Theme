@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap%27');  /*font*/
+
+:root {
+  --FVUI: "Loading CEO";
+  --font: "Days One" ;
+  --version: "V 1.0";
+}
+
+:root{ /* Colors for users customization */
+	--color1: 0, 0, 0;   /* Additional BG */
+	--color2: 0, 0, 0;   /* Background */
+	--color3: 0, 0, 0;   /* Blue (теперь чёрный) */
+	--color4: 0, 0, 0;   /* Gradient Color (теперь чёрный)*/
+	
+	--text1: 174, 174, 174;  /*accent*/
+	--text2: 107, 107, 107;  /*no accent*/
+}
+:root.theme-light { /* Colors for users customization */
+	--color1: 0, 0, 0;  /* Additional BG */
+	--color2: 0, 0, 0;  /* Background */
+	--color3: 0, 0, 0;  /* Blue (теперь чёрный) */
+	--color4: 0, 0, 0;  /* Gradient Color (теперь чёрный)*/
+}
+
+
+:root {
+    /*main*/
+  --color01: rgb(var(--color1));
+  --color02: rgb(var(--color2));
+  --color03: rgb(var(--color3));
+  --color04: rgb(var(--color4));
+    /*opacity*/
+  --ColorOpacity  : 1;  /* opacity multiplier (0.1-...) */
+  --DisableOpacity: 0;  /* Default=0 (0 or 1) */
+	
+  --opacity01: rgba(var(--color1), calc(var(--ColorOpacity)*0.9*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+  --opacity02: rgba(var(--color2), calc(var(--ColorOpacity)*0.9*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+
+  --opacity020a: rgba(var(--color2), calc(var(--ColorOpacity)*0.8*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+
+  --opacity01a: rgba(var(--color1), calc(var(--ColorOpacity)*0.6*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+  --opacity02a: rgba(var(--color2), calc(var(--ColorOpacity)*0.6*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+
+  --opacity01b: rgba(var(--color1), calc(var(--ColorOpacity)*0.4*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+  --opacity02b: rgb(var(--color2),calc(var(--ColorOpacity)*0.4*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+
+  --opacity01c: rgba(var(--color1), calc(var(--ColorOpacity)*0.2*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+  --opacity02c: rgba(var(--color1), calc(var(--ColorOpacity)*0.2*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+
+  --opacity03 : rgba(var(--color3), calc(var(--ColorOpacity)*0.5*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+  --opacity03a: rgba(var(--color3), calc(var(--ColorOpacity)*0.2*(1 - var(--DisableOpacity)) + var(--DisableOpacity)));
+      /*text*/
+  --text01: rgb(var(--text1));
+  --text02: rgb(var(--text2));
+}
+
+:root {
+  --full01: var(--full01_lite_MUI, rgba(var(--color1), calc(var(--ColorOpacity)*0.9*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+  --full02: var(--full02_lite_MUI, rgba(var(--color2), calc(var(--ColorOpacity)*0.9*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+
+  --full020a: var(--full020a_lite_MUI, rgba(var(--color2), calc(var(--ColorOpacity)*0.8*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+
+  --full01a: var(--full01a_lite_MUI, rgba(var(--color1), calc(var(--ColorOpacity)*0.6*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+  --full02a: var(--full02a_lite_MUI, rgba(var(--color2), calc(var(--ColorOpacity)*0.6*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+
+  --full01b: var(--full01b_lite_MUI, rgba(var(--color1), calc(var(--ColorOpacity)*0.4*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+  --full02b: var(--full02b_lite_MUI, rgba(var(--color2), calc(var(--ColorOpacity)*0.4*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+
+  --full01c: var(--full01c_lite_MUI, rgba(var(--color1), calc(var(--ColorOpacity)*0.2*(1 - var(--DisableOpacity)) + var(--DisableOpacity))))
+  --full02c: var(--full02c_lite_MUI, rgba(var(--color1), calc(var(--ColorOpacity)*0.2*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+
+  --full03 : var(--full03_lite_MUI, rgba(var(--color3), calc(var(--ColorOpacity)*0.8*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+  --full03a: var(--full03a_lite_MUI, rgba(var(--color3), calc(var(--ColorOpacity)*0.4*(1 - var(--DisableOpacity)) + var(--DisableOpacity))));
+}
+
+
+/*=============================================
+=                Loading screen               =
+=============================================*/
+
+:root{
+  --loading-screen: 3s
+}
+
+/*----------  Keyframes  ----------*/
+@keyframes loaderr{
+  to{
+    --version      : "Make sure you used at least one of the subthemes OR did not break the syntax. If this doesn't help, reinstall the theme.";
+    --FVUI         : "Error.";
+    pointer-events : none;
+    backdrop-filter: none;
+    background     : var(--opacity02b);
+  }
+}
+
+@keyframes loading-effects {
+  0%{
+    filter: blur(4px);
+    transform: scale(1);
+  }
+  50%{
+    filter: blur(25px);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes loading-bg {
+  0%{
+    box-shadow: 0px 0px 100px 30px inset var(--color03);
+  }
+  50%{
+    box-shadow: 0px 0px 100px 50px inset var(--color03);
+    filter: blur(100px);
+  }
+  70%{
+    box-shadow: 0px 0px 30px 50px inset var(--color03);
+  }
+  100%{
+    box-shadow: 0;
+  }
+}
+
+@keyframes loadingscreen_unblur_title {
+  0% {
+    filter: blur(12px);
+    text-shadow: 0 0 500px #000;
+  }
+  50% {
+    filter: blur(0px);
+    text-shadow: 0 0 10px #000, 0 0 20px #000;
+  }
+  100% {
+    filter: blur(36px);
+    text-shadow: 0 0 500px #000;
+  }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes hide {
+  to { opacity: 0; pointer-events: none; }
+}
+
+/*----------  BG  ----------*/
+
+.app_a3002d{
+  animation: loading-effects var(--loading-screen)!important;
+}
+
+.appMount__51fd7::before{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  box-shadow: 0 0 100px 30px inset var(--color03);
+
+  animation: 
+  loading-bg var(--loading-screen) alternate ease-in-out,
+  fade-out var(--loading-screen) ease-in-out forwards 1s,
+  hide var(--loading-screen) linear forwards var(--loading-screen);
+
+  content: "";
+  z-index: 999;
+
+  pointer-events: none;
+}
+
+/*----------  Text  ----------*/
+
+.containerTop__45edc {
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+
+  position: absolute;
+  left: 0!important;
+  bottom: 0!important;
+  transform: none;
+
+	width  : 100vw;
+	z-index: 9999;
+
+	font-weight: bold;
+  
+  animation: 
+  fade-out var(--loading-screen) ease-in-out forwards 1s,
+  hide var(--loading-screen) linear forwards var(--loading-screen),
+  loaderr forwards 1s 5s!important;
+}
+
+.containerTop__45edc::after {
+	position: absolute;
+	content    : "Loading CEO";
+	font-size  : 75px !important;
+	color      : var(--color03);
+	text-shadow: 0 0 10px currentcolor, 0 0 20px currentcolor;
+	font-weight: bold;
+	animation: loadingscreen_unblur_title 3s forwards;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+}
+
+.containerTop__45edc::before {
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	transform: translate(-50%, -50%);
+	content    : "V 1.0";
+	font-size  : 75px !important;
+	color      : var(--color03);
+	text-shadow: 0 0 10px currentcolor, 0 0 20px currentcolor;
+	font-weight: bold;
+}
