@@ -12,8 +12,8 @@ body {
     container-name: body;
 
     /* font, change to '' for default discord font */
-    --font: 'figtree';
-    --code-font: '';
+    --font: 'Days One';
+    --code-font: 'Days One';
 
     /* sizes */
     --gap: 12px; /* spacing between panels */
@@ -432,9 +432,9 @@ body {
 }
 
 body {
-    --font-primary: var(--font), 'gg sans';
-    --font-display: var(--font), 'gg sans';
-    --font-code: var(--code-font), 'gg mono';
+    --font-primary: var(--font), 'Days One';
+    --font-display: var(--font), 'Days One';
+    --font-code: var(--code-font), 'Days One';
 }
 
 [class*='scroll'] {
